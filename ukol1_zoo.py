@@ -45,9 +45,9 @@ assert pavouk_export['vaha'] == 0.1
 value = getattr(zvire, "vaha")
 
 
-#--------------------------
+#-------------------------
 #   TŘÍDA ZAMĚSTNANEC
-#--------------------------
+#-------------------------
 
 class Zamestnanec:
     def __init__(self, cele_jmeno: str, rocni_plat: int, pozice: str):
