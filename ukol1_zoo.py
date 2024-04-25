@@ -105,11 +105,10 @@ assert reditel.pozice == 'Reditel'
 
 assert isinstance(reditel.oblibene_zvire, Zvire) 
 """
-class Reditel(Zvire, Zamestnanec):
-    def __init__(self, jmeno: str, druh: str, vaha: int, cele_jmeno: str, rocni_plat: int, pozice='Reditel', oblibene_zvire= Zvire):
-        Zvire.__init__(self, jmeno: str, druh: str, vaha: int)
-        Zamestnanec.__init__(self, cele_jmeno, rocni_plat, pozice='Reditel')
-        self.oblibene_zvire = oblibene_zvire
+class Reditel(Zamestnanec):
+    def __init__(self, cele_jmeno, rocni_plat, pozice, oblibene_zvire):
+        super().__init__(cele_jmeno, rocni_plat, pozice)
+        self.oblibene_zvire = Zvire
 
 zvire = Zvire()
 reditel = Reditel(jmeno='Karel', rocni_plat=800_000, oblibene_zvire=Zvire)
